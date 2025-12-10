@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-primary;
+  background-color: $bg-primary;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-heading;
+  color: $text-primary;
+  margin-bottom: $spacing-md;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 36px;
+  }
+}
+
+h2 {
+  font-size: $font-size-h2;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 28px;
+  }
+}
+
+h3 {
+  font-size: $font-size-h3;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 24px;
+  }
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+p {
+  margin-bottom: $spacing-md;
+  color: $text-secondary;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color $transition-base;
+  
+  &:hover {
+    color: $primary-dark;
+  }
+  
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+}
+
+ul, ol {
+  margin-bottom: $spacing-md;
+  padding-left: $spacing-xl;
+}
+
+li {
+  margin-bottom: $spacing-xs;
+  color: $text-secondary;
+}
+
+code {
+  font-family: $font-family-mono;
+  font-size: 0.9em;
+  background-color: $bg-tertiary;
+  padding: 2px 6px;
+  border-radius: $border-radius-sm;
+  color: $accent-color;
+}
+
+pre {
+  background-color: $bg-tertiary;
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  overflow-x: auto;
+  margin-bottom: $spacing-md;
+  
+  code {
+    background-color: transparent;
+    padding: 0;
+    color: $text-primary;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Accessibility
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Container
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  
+  @media (max-width: $breakpoint-md) {
+    padding: 0 $spacing-md;
+  }
+}
+

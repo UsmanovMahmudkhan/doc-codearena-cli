@@ -1,0 +1,224 @@
+---
+layout: home
+title: Home
+---
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-content-left">
+      <h1 class="hero-title">CoreArenaCLI</h1>
+      <p class="hero-description">
+        A modular, extensible command-line toolkit offering utilities and developer tools built with Node.js. 
+        Designed for scalability, clean architecture, and community contribution.
+      </p>
+      <div class="hero-cta">
+        <a href="{{ site.links.documentation }}" class="btn btn-primary btn-large" target="_blank" rel="noopener">
+          View Documentation
+        </a>
+        <a href="{{ site.links.github }}" class="btn btn-outline btn-large" target="_blank" rel="noopener">
+          GitHub Repository
+        </a>
+      </div>
+    </div>
+    <div class="hero-content-right">
+      <div class="terminal-animation">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="terminal-title">corearena-cli</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-command">corearena init</span>
+            </div>
+            <div class="terminal-line terminal-output">
+              <span class="terminal-success">✓</span> Initializing CoreArenaCLI...
+            </div>
+            <div class="terminal-line terminal-output">
+              <span class="terminal-success">✓</span> CLI configured successfully
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-command typing">corearena create arena</span>
+              <span class="cursor">|</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Quick Links</h2>
+      <p>Get started with CoreArenaCLI by exploring our documentation and repository</p>
+    </div>
+    
+    <div class="quick-links">
+      <div class="quick-link-card">
+        <div class="icon-wrapper">
+          {% include icon.html name="documentation" %}
+        </div>
+        <h3>Documentation</h3>
+        <p>Comprehensive guides and API references for all components</p>
+        <a href="{{ site.links.documentation }}" class="btn btn-primary" target="_blank" rel="noopener">
+          Read Docs
+        </a>
+      </div>
+      
+      <div class="quick-link-card">
+        <div class="icon-wrapper">
+          {% include icon.html name="github" %}
+        </div>
+        <h3>GitHub Repository</h3>
+        <p>Explore the source code, contribute, and report issues</p>
+        <a href="{{ site.links.github }}" class="btn btn-primary" target="_blank" rel="noopener">
+          View on GitHub
+        </a>
+      </div>
+      
+      <div class="quick-link-card">
+        <div class="icon-wrapper">
+          {% include icon.html name="community" %}
+        </div>
+        <h3>Community</h3>
+        <p>Join discussions, get help, and connect with other developers</p>
+        <a href="{{ '/community.html' | relative_url }}" class="btn btn-primary">
+          Join Community
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-title">
+      <h2>Core Components</h2>
+      <p>CoreArenaCLI consists of three integrated components working together</p>
+    </div>
+    
+    <div class="components-grid">
+      <div class="component-card">
+        <div class="icon-wrapper">
+          {% include icon.html name="cli" %}
+        </div>
+        <h3>codearena-cli</h3>
+        <p>The command-line interface built with oclif that provides a powerful CLI for interacting with the CoreArena platform.</p>
+        <ul>
+          <li>Modular command structure</li>
+          <li>Extensible architecture</li>
+          <li>Cross-platform support</li>
+          <li>Developer-friendly API</li>
+        </ul>
+      </div>
+      
+      <div class="component-card">
+        <div class="icon-wrapper">
+          {% include icon.html name="server" %}
+        </div>
+        <h3>codearena-server</h3>
+        <p>The backend REST API built with Express.js that handles persistent data, authentication, and code execution.</p>
+        <ul>
+          <li>RESTful API design</li>
+          <li>Database models & migrations</li>
+          <li>OAuth authentication</li>
+          <li>Docker sandbox integration</li>
+        </ul>
+      </div>
+      
+      <div class="component-card">
+        <div class="icon-wrapper">
+          {% include icon.html name="web" %}
+        </div>
+        <h3>codearena-web</h3>
+        <p>A modern Next.js web application providing a user-friendly interface for the CoreArena platform.</p>
+        <ul>
+          <li>React-based UI</li>
+          <li>Server-side rendering</li>
+          <li>Responsive design</li>
+          <li>Real-time updates</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Why CoreArenaCLI?</h2>
+      <p>Built for developers, by developers</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          {% include icon.html name="modular" %}
+        </div>
+        <h3 class="feature-title">Modular Design</h3>
+        <p class="feature-description">
+          Extensible architecture that allows you to add custom commands and functionality easily.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          {% include icon.html name="performance" %}
+        </div>
+        <h3 class="feature-title">High Performance</h3>
+        <p class="feature-description">
+          Optimized for speed and efficiency, built with modern Node.js best practices.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          {% include icon.html name="security" %}
+        </div>
+        <h3 class="feature-title">Secure by Default</h3>
+        <p class="feature-description">
+          OAuth authentication, Docker sandboxing, and secure code execution environments.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          {% include icon.html name="docker" %}
+        </div>
+        <h3 class="feature-title">Docker Ready</h3>
+        <p class="feature-description">
+          Full Docker support with containerized deployment and sandbox execution.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          {% include icon.html name="deployment" %}
+        </div>
+        <h3 class="feature-title">Easy Deployment</h3>
+        <p class="feature-description">
+          Multiple deployment options including Vercel, Railway, and traditional VPS setups.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          {% include icon.html name="opensource" %}
+        </div>
+        <h3 class="feature-title">Open Source</h3>
+        <p class="feature-description">
+          Licensed under Apache 2.0, welcoming contributions from the community.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+

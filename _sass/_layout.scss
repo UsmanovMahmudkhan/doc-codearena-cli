@@ -1,0 +1,553 @@
+// Main Content
+.main-content {
+  min-height: calc(100vh - 200px);
+  padding-top: 0;
+}
+
+// Site Header - Stripe style with backdrop blur
+.site-header {
+  background-color: rgba(250, 251, 252, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(227, 232, 239, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all $transition-base;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(250, 251, 252, 0.8));
+    z-index: -1;
+  }
+}
+
+.navbar {
+  padding: $spacing-lg 0;
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.navbar-brand {
+  .brand-link {
+    font-size: $font-size-large;
+    font-weight: $font-weight-semibold;
+    color: $text-primary;
+    letter-spacing: -0.01em;
+    transition: color $transition-base;
+    
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  
+  .brand-text {
+    color: $text-primary;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-sm;
+  
+  span {
+    width: 25px;
+    height: 3px;
+    background-color: $text-primary;
+    margin: 3px 0;
+    transition: $transition-base;
+    border-radius: 2px;
+  }
+  
+  @media (max-width: $breakpoint-md) {
+    display: flex;
+  }
+}
+
+.navbar-menu {
+  @media (max-width: $breakpoint-md) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: $bg-primary;
+    border-top: 1px solid $border-color;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition-base;
+    box-shadow: $shadow-md;
+    
+    &.active {
+      max-height: 500px;
+    }
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  gap: $spacing-lg;
+  padding: 0;
+  margin: 0;
+  
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    gap: 0;
+    padding: $spacing-md 0;
+  }
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-link {
+  color: $text-secondary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 6px;
+  transition: all $transition-base;
+  display: block;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 20px;
+    height: 2px;
+    background-color: $primary-color;
+    border-radius: 2px;
+    transition: transform $transition-base;
+  }
+  
+  &:hover {
+    color: $text-primary;
+    background-color: rgba(99, 91, 255, 0.05);
+    
+    &::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+  
+  &.active {
+    color: $primary-color;
+    font-weight: $font-weight-semibold;
+    background-color: rgba(99, 91, 255, 0.08);
+    
+    &::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+  
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-md $container-padding;
+  }
+}
+
+// Site Footer
+.site-footer {
+  background-color: $bg-dark;
+  color: $text-inverse;
+  padding: $spacing-xxl 0 $spacing-lg;
+  margin-top: $spacing-xxxl;
+  
+  h3, h4 {
+    color: $text-inverse;
+    margin-bottom: $spacing-md;
+  }
+  
+  p {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-xl;
+  margin-bottom: $spacing-xl;
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+.footer-section {
+  h4 {
+    font-size: $font-size-base;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  
+  li {
+    margin-bottom: $spacing-sm;
+  }
+  
+  a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color $transition-base;
+    
+    &:hover {
+      color: $text-inverse;
+    }
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: $spacing-lg;
+  text-align: center;
+  
+  p {
+    margin: 0;
+    font-size: $font-size-small;
+  }
+  
+  a {
+    color: rgba(255, 255, 255, 0.7);
+    
+    &:hover {
+      color: $text-inverse;
+    }
+  }
+}
+
+// Page Layout
+.page {
+  padding: $spacing-xxl 0;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: $spacing-xxl;
+  padding-bottom: $spacing-lg;
+  border-bottom: 2px solid $border-light;
+}
+
+.page-title {
+  margin-bottom: $spacing-sm;
+}
+
+.page-subtitle {
+  font-size: $font-size-large;
+  color: $text-secondary;
+  margin: 0;
+}
+
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+// Home Layout
+.home {
+  .hero {
+    padding: $spacing-xxxl 0;
+    text-align: left;
+    background: $bg-secondary;
+    position: relative;
+    overflow: visible;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    
+    .container {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-xxxl;
+      align-items: center;
+      
+      @media (max-width: $breakpoint-lg) {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: $breakpoint-md) {
+      padding: $spacing-xxl 0;
+      min-height: 75vh;
+    }
+  }
+  
+  .hero-title {
+    font-size: 72px;
+    margin-bottom: $spacing-lg;
+    font-weight: $font-weight-heavy;
+    letter-spacing: -0.04em;
+    color: $text-primary;
+    line-height: 1.1;
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    display: inline-block;
+    
+    // Animated gradient overlay on text
+    &::before {
+      content: 'CoreArenaCLI';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        #635bff 0%,
+        #7c3aed 20%,
+        #3b82f6 40%,
+        #06b6d4 60%,
+        #10b981 80%,
+        #fbbf24 100%
+      );
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: titleGradient 3s ease infinite;
+      z-index: -1;
+      opacity: 0.6;
+    }
+    
+    // Animated particles around title
+    &::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(99, 91, 255, 0.3) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.3) 0%, transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.2) 0%, transparent 40%);
+      animation: titleParticles 4s ease-in-out infinite;
+      z-index: -2;
+      border-radius: 20px;
+    }
+    
+    @media (max-width: $breakpoint-md) {
+      font-size: 48px;
+    }
+    
+    @media (max-width: $breakpoint-sm) {
+      font-size: 36px;
+    }
+  }
+  
+  @keyframes titleGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes titleParticles {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1) rotate(0deg);
+    }
+    33% {
+      opacity: 0.8;
+      transform: scale(1.1) rotate(5deg);
+    }
+    66% {
+      opacity: 0.7;
+      transform: scale(0.95) rotate(-5deg);
+    }
+  }
+  
+  .hero-description {
+    font-size: 22px;
+    color: $text-secondary;
+    max-width: 100%;
+    margin: 0 0 $spacing-xl 0;
+    line-height: 1.7;
+    font-weight: $font-weight-normal;
+    letter-spacing: -0.01em;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    
+    @media (max-width: $breakpoint-md) {
+      font-size: 18px;
+      margin: 0 auto $spacing-xl;
+      max-width: 600px;
+    }
+  }
+  
+  .hero-cta {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+    display: flex;
+    gap: $spacing-md;
+    flex-wrap: wrap;
+    margin-top: $spacing-xl;
+    
+    @media (max-width: $breakpoint-md) {
+      justify-content: center;
+    }
+  }
+  
+  // Terminal animation on right side
+  .hero-content-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+    
+    @media (max-width: $breakpoint-lg) {
+      display: none;
+    }
+  }
+  
+  .terminal-animation {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .terminal-window {
+    background: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    animation: terminalFloat 6s ease-in-out infinite;
+  }
+  
+  .terminal-header {
+    background: #2d2d2d;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .terminal-dots {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    
+    &.dot-red {
+      background: #ff5f56;
+    }
+    
+    &.dot-yellow {
+      background: #ffbd2e;
+    }
+    
+    &.dot-green {
+      background: #27c93f;
+    }
+  }
+  
+  .terminal-title {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: $font-family-mono;
+  }
+  
+  .terminal-body {
+    padding: 20px;
+    font-family: $font-family-mono;
+    font-size: 14px;
+    line-height: 1.8;
+    min-height: 200px;
+  }
+  
+  .terminal-line {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .terminal-prompt {
+    color: #10b981;
+    font-weight: 600;
+  }
+  
+  .terminal-command {
+    color: #60a5fa;
+  }
+  
+  .terminal-output {
+    color: rgba(255, 255, 255, 0.8);
+    padding-left: 20px;
+  }
+  
+  .terminal-success {
+    color: #10b981;
+    margin-right: 8px;
+  }
+  
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 18px;
+    background: #60a5fa;
+    animation: blink 1s infinite;
+    margin-left: 2px;
+  }
+  
+  .typing {
+    position: relative;
+  }
+  
+  @keyframes terminalFloat {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes blink {
+    0%, 50% {
+      opacity: 1;
+    }
+    51%, 100% {
+      opacity: 0;
+    }
+  }
+  
+  .hero-cta {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: $spacing-xl;
+  }
+}
+

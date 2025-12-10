@@ -1,0 +1,64 @@
+# Site Settings
+title: CoreArenaCLI
+description: A modular, extensible command-line toolkit offering utilities and developer tools built with Node.js. Designed for scalability, clean architecture, and community contribution.
+url: https://usmanovmahmudkhan.github.io
+baseurl: /CoreArenaCLI
+author: CoreArena Team
+
+# GitHub Pages Settings
+github: [metadata]
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+theme: null
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Features
+    url: /features.html
+  - title: Community
+    url: /community.html
+  - title: Contact
+    url: /contact.html
+
+# External Links
+links:
+  documentation: https://jordynana.github.io/docs-project/index.html
+  github: https://github.com/UsmanovMahmudkhan/CoreArenaCLI
+  github_discussions: https://github.com/UsmanovMahmudkhan/CoreArenaCLI/discussions
+  github_issues: https://github.com/UsmanovMahmudkhan/CoreArenaCLI/issues
+  discord: https://discord.gg/7jwDsDXP
+  slack: https://codearenacli.slack.com/archives/C0A2R8Q6HFW
+  gitter: https://matrix.to/#/#codeArena-CLI:gitter.im
+  mailing_list: mailto:usmanovmahmudkhan@gmail.com
+
+# Social Links
+social:
+  github: UsmanovMahmudkhan
+  twitter: ""
+  email: usmanovmahmudkhan@gmail.com
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .github
+  - README.md
+
+# Sass/SCSS Settings
+sass:
+  style: compressed
+
+# SEO Settings
+lang: en-US
+

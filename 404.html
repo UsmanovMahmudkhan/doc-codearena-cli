@@ -1,0 +1,31 @@
+---
+layout: default
+title: 404 - Page Not Found
+permalink: /404.html
+---
+
+<div class="section" style="text-align: center; padding: 4rem 0;">
+  <div class="container">
+    <h1 style="font-size: 72px; margin-bottom: 1rem; color: #1a73e8;">404</h1>
+    <h2 style="margin-bottom: 1rem;">Page Not Found</h2>
+    <p style="font-size: 1.125rem; color: #5f6368; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+      Sorry, the page you are looking for doesn't exist or has been moved.
+    </p>
+    <div>
+      <a href="{{ '/' | relative_url }}" class="btn btn-primary btn-large">
+        Go to Homepage
+      </a>
+    </div>
+    
+    <div style="margin-top: 3rem;">
+      <h3>Popular Pages</h3>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
+        <a href="{{ '/features.html' | relative_url }}" class="btn btn-outline">Features</a>
+        <a href="{{ '/community.html' | relative_url }}" class="btn btn-outline">Community</a>
+        <a href="{{ '/contact.html' | relative_url }}" class="btn btn-outline">Contact</a>
+        <a href="{{ site.links.documentation }}" class="btn btn-outline" target="_blank" rel="noopener">Documentation</a>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,15 @@
+<div class="feature-card">
+  <div class="feature-icon">
+    {% if include.icon %}
+    <span class="icon">{{ include.icon }}</span>
+    {% else %}
+    <span class="icon">⚡</span>
+    {% endif %}
+  </div>
+  <h3 class="feature-title">{{ include.title }}</h3>
+  <p class="feature-description">{{ include.description }}</p>
+  {% if include.link %}
+  <a href="{{ include.link }}" class="feature-link">Learn more →</a>
+  {% endif %}
+</div>
+

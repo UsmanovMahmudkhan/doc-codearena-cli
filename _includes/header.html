@@ -1,0 +1,46 @@
+<header class="site-header">
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="{{ '/' | relative_url }}" class="brand-link">
+          <span class="brand-text">CoreArenaCLI</span>
+        </a>
+      </div>
+      
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="navbar-menu">
+        <ul class="navbar-nav">
+          {% for item in site.navigation %}
+          <li class="nav-item">
+            <a href="{{ item.url | relative_url }}" class="nav-link {% if page.url == item.url %}active{% endif %}">
+              {{ item.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.navbar-toggle');
+    const menu = document.querySelector('.navbar-menu');
+    
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !isExpanded);
+        menu.classList.toggle('active');
+      });
+    }
+  });
+</script>
+
